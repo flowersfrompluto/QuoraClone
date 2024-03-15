@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* DEFAULT */
+
+body {
+  background-color: #F1F2F2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+li {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.page {
+  margin-top: 100px;
+}
+
+/* NAVIGATION HERE */
+
+.nav {
+  background-color: #ffffff;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.navSignIn:hover,
+.blogLink:hover {
+  background-color: transparent !important;
+  color: #00AEFF !important;
+}
+
+.nav_menu {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+.nav_menu .logo img {
+  height: 80px;
+}
+
+.nav_menu li {
+  padding: 0px 15px;
+}
+
+.nav_menu button {
+  padding: 7px 25px;
+  color: #8F9092;
+  background-color: transparent;
+  border: 1px solid #8F9092;
+  border-radius: 5px;
+}
+
+.nav .logo {
+  padding-right: 50px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #8F9092;
+}
+
+.nav-link:focus {
+  color: #B92B27;
+  text-decoration: underline;
+}
+
+/* HOME PAGE */
+
+.home {
+  padding: 0 10px;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.sidebar {
+  padding-left: 20px;
+  width: 13%;
+  height: 75vh;
+  flex-direction: column;
+  display: flex;
+}
+
+.sideBarHead span {
+  padding-right: 5px;
+}
+
+.sideBarHead li {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebarFoot {
+  padding: 10px;
+  border-radius: 8px;
+  justify-content: space-between;
+}
+
+.sidebarFoot .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sideBarHead .link {
+  font-size: 13px;
+  color: #505050;
+}
+
+
+.sidebarFoot .link {
+  font-size: 13px;
+  color: #939598;
+}
+
+.sidebarFoot .bullet {
+  color: #939598;
+  font-size: 10px;
+}
+
+.mainFeed {
+  padding-left: 25px;
+  width: 50%;
+}
+
+.newPost{
+  padding: 10px 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #DEE0E1;
+  border-radius: 2px;
+}
+
+.topBtn{
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topBtn p{
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.topBtn button{
+  width: 95%;
+  text-align: left;
+  padding: 5px 10px;
+  border-radius: 50px;
+  color: #939598;
+  font-size: 15px;
+  border: 1px solid #DEE0E1;
+  background-color: #f5f5f5;
+}
+
+.createBtns{
+  justify-content: space-between;
+  align-items: center;
+  color: #939598;
+}
+
+.line{
+  border-left: 1px solid #939598;
+  color: #FFFFFF;
+}
+
+.createBtns button{
+  width: 32%;
+  padding: 5px 10px;
+  border-radius: 50px;
+  color: #646567;
+  font-size: 16px;
+  background-color:transparent;
+  border: none;
+}
+
+
+
+
+
+
+.ads {
+  padding-left: 25px;
+  width: 30%;
+  background-color: #00AEFF;
+}
+
+
+
+
+
+
+
+
+
+/* HOVER/ANIMATIONS */
+
+.sideBarHead li:hover {
+  background-color: #E4E6E6;
+}
+
+.sidebarFoot .link:hover{
+  text-decoration: 2px underline;
+}
+
+.topBtn button:hover{
+  background-color: #F1F2F2;
+}
+
+.createBtns button:hover{
+  background-color: #f5f5f5;
+}
