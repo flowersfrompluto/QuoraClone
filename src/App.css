@@ -39,7 +39,7 @@ li {
 }
 
 .page {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 /* NAVIGATION HERE */
@@ -51,18 +51,23 @@ li {
   top: 0;
   width: 100%;
   z-index: 99;
-}
-
-.navSignIn:hover,
-.blogLink:hover {
-  background-color: transparent !important;
-  color: #00AEFF !important;
+  height: 45px;
 }
 
 .nav_menu {
   align-items: center;
   display: flex;
   list-style: none;
+  justify-content: space-between;
+  font-size: 30px;
+  margin-top: -10px;
+  height: 67px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.navBtn{
+  margin-top: -10px;
 }
 
 .nav_menu .logo img {
@@ -70,7 +75,7 @@ li {
 }
 
 .nav_menu li {
-  padding: 0px 15px;
+  padding: 0px 10px;
 }
 
 .nav_menu button {
@@ -79,10 +84,25 @@ li {
   background-color: transparent;
   border: 1px solid #8F9092;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav .tryQuora {
+  font-weight: bold;
+  border-radius: 20px;
+  border: 1px solid #dee0e1;
+}
+
+.nav_menu .addQuestion{
+  border-radius: 20px;
+  background-color: #B92B27;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
 }
 
 .nav .logo {
-  padding-right: 50px;
+  padding-right: 20px;
 }
 
 .nav-link {
@@ -90,10 +110,15 @@ li {
   color: #8F9092;
 }
 
-.nav-link:focus {
-  color: #B92B27;
-  text-decoration: underline;
+.nav_menu input {
+  width: 350px;
+  height: 35px;
+  outline: none;
+  padding: 0px 8px;
+  border: 1px solid #dee0e1;
 }
+
+
 
 /* HOME PAGE */
 
@@ -106,9 +131,12 @@ li {
 .sidebar {
   padding-left: 20px;
   width: 13%;
-  height: 75vh;
+  height: 100vh;
   flex-direction: column;
   display: flex;
+  position: fixed;
+  z-index: 90;
+  /* background-color: #646567; */
 }
 
 .sideBarHead span {
@@ -148,29 +176,30 @@ li {
 }
 
 .mainFeed {
+  margin-left: 15%;
   padding-left: 25px;
   width: 50%;
 }
 
-.newPost{
+.newPost {
   padding: 10px 5px;
   background-color: #FFFFFF;
   border: 1px solid #DEE0E1;
   border-radius: 2px;
 }
 
-.topBtn{
+.topBtn {
   margin-bottom: 5px;
   align-items: center;
   justify-content: space-between;
 }
 
-.topBtn p{
+.topBtn p {
   font-size: 20px;
   padding-right: 10px;
 }
 
-.topBtn button{
+.topBtn button {
   width: 95%;
   text-align: left;
   padding: 5px 10px;
@@ -181,26 +210,98 @@ li {
   background-color: #f5f5f5;
 }
 
-.createBtns{
+.createBtns {
   justify-content: space-between;
   align-items: center;
   color: #939598;
 }
 
-.line{
+.line {
   border-left: 1px solid #939598;
   color: #FFFFFF;
 }
 
-.createBtns button{
+.createBtns button {
   width: 32%;
   padding: 5px 10px;
   border-radius: 50px;
   color: #646567;
   font-size: 16px;
-  background-color:transparent;
+  background-color: transparent;
   border: none;
 }
+
+.postBody {
+  margin-bottom: 10px;
+}
+
+.postBody {
+  justify-content: space-between;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.userName {
+  align-items: center;
+}
+
+.post .postTxt {
+  align-items: center;
+  justify-content: center;
+  /* text-align: justify; */
+  padding: 3px 10px;
+  font-size: 15px;
+}
+
+.post .postImage {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #15151B;
+}
+
+.post img {
+  height: 383px;
+  background-color: #505050;
+}
+
+.actionBtns{
+  align-items: center;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+.actionBtns button{
+  font-size: 18px;
+  color: #646567;
+}
+
+.actionBtns .bullet {
+  color: #939598;
+  font-size: 10px;
+  padding: 0 3px;
+  line-height: 25px;
+}
+
+.upVoteBtn{
+  padding: 2px 8px;
+  border: 1px solid #8F9092;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.arrowUp{
+  padding-right: 5px;
+  color: #2E69FF;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
 
 
 
@@ -210,7 +311,12 @@ li {
 .ads {
   padding-left: 25px;
   width: 30%;
-  background-color: #00AEFF;
+  background-color: #F7F7F8;
+  position: fixed;
+  border: 1px solid #dee0e1;
+  z-index: 90;
+  height: 100vh;
+  margin-left: 65%;
 }
 
 
@@ -221,20 +327,54 @@ li {
 
 
 
-/* HOVER/ANIMATIONS */
+/* HOVER ANIMATIONS */
 
 .sideBarHead li:hover {
   background-color: #E4E6E6;
 }
 
-.sidebarFoot .link:hover{
+.sidebarFoot .link:hover {
   text-decoration: 2px underline;
 }
 
-.topBtn button:hover{
+.topBtn button:hover {
   background-color: #F1F2F2;
 }
 
-.createBtns button:hover{
+.createBtns button:hover {
   background-color: #f5f5f5;
+}
+
+.nav button:hover {
+  cursor: pointer;
+}
+
+.nav_menu input:focus {
+  border: 1px solid #2E69FF;
+  box-shadow: 0 0px 3px 0 #2E69FF;
+}
+
+.nav_menu input:hover {
+  border: 1px solid #2E69FF;
+}
+
+
+.nav_menu .addQuestion:hover{
+  background-color: #A82723;
+}
+
+.nav-link:focus {
+  color: #B92B27;
+  border-bottom: 2px solid #B92B27;
+}
+
+
+.navSignIn:hover,
+.blogLink:hover {
+  background-color: transparent !important;
+  color: #00AEFF !important;
+}
+
+.nav .tryQuora:hover {
+  background-color: #F7F7F7;
 }

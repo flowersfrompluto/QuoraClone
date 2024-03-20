@@ -8,10 +8,18 @@ import { CgGames } from "react-icons/cg";
 import { MdGames, MdOutlinePsychology, MdOutlineSportsKabaddi, MdCameraRoll, MdOutlineHistory, MdOutlineAdd } from "react-icons/md";
 import { GiMusicSpell } from "react-icons/gi";
 import { TiSocialAtCircular } from "react-icons/ti";
-import { PiNotePencilThin } from "react-icons/pi";
+import { PiNotePencilThin, PiArrowFatUpThin, PiArrowFatDownThin } from "react-icons/pi";
 import { LuPencil } from "react-icons/lu";
+import { FaRegComment } from "react-icons/fa";
 import { RiQuestionnaireLine } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
+import { FaUserSecret } from "react-icons/fa6";
+import { BsArrowRepeat } from "react-icons/bs";
+
+
+
+// IMPORTED IMAGES
+import img1 from "../images/img (3).jpg"
 
 
 
@@ -153,27 +161,59 @@ function Home() {
           <div className="feed">
             <div className="postBody">
               <div className="userInfo flex">
-                <div>
-                  <img src="" alt="" />
-                </div>
-                <div className="flex">
+                <div className="userName flex">
                   <div>
-                    <p>True Love Conquers All</p>
-                    <p className="bullet">•</p>
-                    <button>Follow</button>
+                    <img src="" alt="" />
+                    <p><FaUserSecret /></p>
                   </div>
-                  <div>
-                    <p>Posted by Ana Lorde</p>
-                    <p className="bullet">•</p>
-                    <p>Oct 20</p>
+                  <div className="userDetails">
+                    <div className="flex">
+                      <p>True Love Conquers All</p>
+                      <p className="bullet">•</p>
+                      <button>Follow</button>
+                    </div>
+                    <div className="flex">
+                      <p>Posted by Ana Lorde</p>
+                      <p className="bullet">•</p>
+                      <p>Oct 20</p>
+                    </div>
                   </div>
                 </div>
                 <div>
                   <button><IoMdClose /></button>
                 </div>
               </div>
-              <div className="post"></div>
-              <div className="actionBtns"></div>
+              <div className="post">
+                <div className="postTxt">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea illo repellendus similique impedit officiis, rerum porro quidem laboriosam, optio dicta aliquid vitae tenetur, ullam veniam ipsam voluptatum adipisci quasi? Ab, libero! Facilis eius rem odio quidem commodi. Distinctio quae maiores eum unde rem, rerum corporis, recusandae voluptate harum nostrum voluptatem!</p>
+                </div>
+                <div className="postImage">
+                  <img src={img1} alt="" />
+                </div>
+              </div>
+              <div className="actionBtns flex">
+                <div className="flex">
+                  <button className="upVoteBtn flex">
+                    <p className="arrowUp"><PiArrowFatUpThin /></p>
+                    Upvote
+                    <p className="bullet">•</p>
+                    <p>100</p>
+                  </button>
+                  <button className="downVoteBtn">
+                    <PiArrowFatDownThin />
+                  </button>
+                </div>
+                <div>
+                  <button>
+                    <FaRegComment />
+                  </button>
+                </div>
+                <div>
+                  <button>
+                    <BsArrowRepeat />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -36,11 +36,11 @@ function Navigation() {
           <li>
             <Link to="/blog" className="nav-link"><FaBell /></Link>
           </li>
-          <li>
+          <li className="navBtn">
             <input type="text" placeholder="Search Quora"/>
           </li>
-          <li>
-            <button>Try Quora+</button>
+          <li className="navBtn">
+            <button className="tryQuora">Try Quora+</button>
           </li>
           <li>
             <Link to="/blog" className="nav-link"><FaUser /></Link>
@@ -48,8 +48,8 @@ function Navigation() {
           <li>
             <Link to="/blog" className="nav-link"><CiGlobe /></Link>
           </li>
-          <li>
-            <button>Add Question</button>
+          <li className="navBtn">
+            <button className="addQuestion">Add Question</button>
           </li>
         </ul>
       </div>
