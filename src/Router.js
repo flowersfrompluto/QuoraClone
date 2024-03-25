@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import CreatePost from "./pages/CreatePost";
-import SinglePost from "./pages/SinglePost";
+import CreatePost from "./components/CreatePost";
+import AskQuestion from "./components/AskQuestion";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Account from "./pages/Account";
+import ErrorPage from "./pages/ErrorPage";
+
 
 
 export default function Router() {
@@ -14,17 +16,14 @@ export default function Router() {
       {/* <Navigation /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/properties" element={<CreatePost />} />
-        <Route path="/properties/details/:id" element={<SinglePost />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/signup" element={<Signup />}>
-          <Route path="/signup" element={<Navigate replace to="useraccount" />}/>
-          {/* <Route path="useraccount" element={<UserSignup />} />
-          <Route path="agentaccount" element={<AgentSignup />} />
-          <Route path="admin" element={<MerchantSignup />} /> */}
+        <Route path="/createpost" element={<Signup />}>
+          <Route path="/createpost" element={<Navigate replace to="createpost" />}/>
+          <Route path="createpost" element={<CreatePost />} />
+          <Route path="askquestion" element={<AskQuestion />} />
         </Route>
-        <Route path="*" element={<h1>Error page not found</h1>}/>
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>

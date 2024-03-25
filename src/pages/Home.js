@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 // import Button from "../components/Button";
 import { FaUser } from "react-icons/fa";
 import Navigation from "../components/Navigation";
+import CreatePost from "../components/CreatePost";
 
 // REACT ICONS
 import { CgGames } from "react-icons/cg";
@@ -26,6 +27,12 @@ import img1 from "../images/img (3).jpg"
 function Home() {
   return (
     <div>
+      <div className="popUp">
+        <div className="postBody">
+          <CreatePost />
+        </div>
+      </div>
+      <div>
       <Navigation />
       <div className="page home flex">
         <div className="sidebar">
@@ -203,15 +210,21 @@ function Home() {
                     <PiArrowFatDownThin />
                   </button>
                 </div>
-                <div>
-                  <button>
-                    <FaRegComment />
-                  </button>
-                </div>
-                <div>
-                  <button>
-                    <BsArrowRepeat />
-                  </button>
+                <div className="atnBtn flex">
+                  <div>
+                    <button className="flex">
+                      <FaRegComment />
+                      <p className="bullet">•</p>
+                      <p>100</p>
+                    </button>
+                  </div>
+                  <div>
+                    <button className="flex">
+                      <BsArrowRepeat />
+                      <p className="bullet">•</p>
+                    <p>100</p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -219,6 +232,7 @@ function Home() {
 
         </div>
         <div className="ads">empty</div>
+      </div>
       </div>
     </div>
   );

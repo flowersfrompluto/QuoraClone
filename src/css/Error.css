@@ -1,0 +1,33 @@
+.comingSoon {
+    min-height: 100vmin;
+    display: flex;
+    flex-direction: column;
+    background: url(../images/Oops-404-Error-with-a-broken-robot-amico.gif);
+    background-color: #FFFFFF;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.comingSoon .info{
+    width: 90%;
+    margin: auto;
+    padding-left: 150px;
+}
+
+.comingSoon .info p{
+    padding: 15px 0;
+    font-size: 30px;
+}
+
+.comingSoon .info .link:hover {
+    background: #A31A1F;
+}
+
+.comingSoon .info .link {
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: #CB2027;
+    color: #eaeaea;
+    text-decoration: none;
+}

@@ -1,6 +1,8 @@
 // import Button from "./Button";
 import logo from "../images/logo.png"
 import { Link } from "react-router-dom";
+
+// REACT ICONS
 import { IoMdHome } from "react-icons/io";
 import { LiaNewspaperSolid } from "react-icons/lia";
 import { FaBell } from "react-icons/fa6";
@@ -18,7 +20,7 @@ function Navigation() {
         <ul className="nav_menu">
           <li className="logo">
             <Link to="/" className="nav-link">
-              <img src={logo} alt="PropertiesHub Logo"/>
+              <img src={logo} alt="Quora Logo"/>
             </Link>
           </li>
           <li>

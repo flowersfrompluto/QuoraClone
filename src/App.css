@@ -66,7 +66,7 @@ li {
   padding-left: 20px;
 }
 
-.navBtn{
+.navBtn {
   margin-top: -10px;
 }
 
@@ -93,7 +93,7 @@ li {
   border: 1px solid #dee0e1;
 }
 
-.nav_menu .addQuestion{
+.nav_menu .addQuestion {
   border-radius: 20px;
   background-color: #B92B27;
   color: #ffffff;
@@ -248,7 +248,6 @@ li {
 .post .postTxt {
   align-items: center;
   justify-content: center;
-  /* text-align: justify; */
   padding: 3px 10px;
   font-size: 15px;
 }
@@ -265,15 +264,18 @@ li {
   background-color: #505050;
 }
 
-.actionBtns{
+.actionBtns {
   align-items: center;
-  font-size: 20px;
-  padding-top: 5px;
+  padding: 5px 20px;
 }
 
-.actionBtns button{
-  font-size: 18px;
+.actionBtns button {
+  font-size: 15px;
   color: #646567;
+  cursor: pointer;
+  padding: 2px 8px;
+  background-color: #F7F7F8;
+  border: 1px solid #dee0e1;
 }
 
 .actionBtns .bullet {
@@ -283,44 +285,84 @@ li {
   line-height: 25px;
 }
 
-.upVoteBtn{
-  padding: 2px 8px;
-  border: 1px solid #8F9092;
+.upVoteBtn {
   border-radius: 20px 0px 0px 20px;
 }
 
-.arrowUp{
+.downVoteBtn {
+  border-radius: 0px 20px 20px 0px;
+}
+
+.arrowUp {
   padding-right: 5px;
   color: #2E69FF;
-  line-height: 30px;
   font-size: 20px;
 }
 
+.atnBtn {
+  padding-left: 20px;
+  justify-content: space-between;
+}
 
-
-
-
-
-
-
-
-
-
-
+.atnBtn button {
+  border-radius: 20px;
+  border: none;
+  align-items: center;
+}
 
 .ads {
   padding-left: 25px;
   width: 30%;
   background-color: #F7F7F8;
-  position: fixed;
   border: 1px solid #dee0e1;
+  position: fixed;
   z-index: 90;
   height: 100vh;
   margin-left: 65%;
 }
 
 
+.popUp {
+  background-color: #15151bea;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 100;
+}
 
+.popUp .postBody{
+  background-color: #ffffff;
+  width: 60%;
+  height: 70%;
+  border-radius: 8px;
+  border: 1px solid #dee0e1;
+  margin: auto;
+  padding: 20px;
+}
+
+
+/* CREATE POST */
+
+.question {
+
+}
+
+.question .tips {
+  color: #2E69FF;
+  background-color: #EBF0FF;
+}
+
+.question ul{
+  padding-left: 35px;
+}
+
+.question li {
+  list-style: disc;
+}
 
 
 
@@ -358,8 +400,7 @@ li {
   border: 1px solid #2E69FF;
 }
 
-
-.nav_menu .addQuestion:hover{
+.nav_menu .addQuestion:hover {
   background-color: #A82723;
 }
 
@@ -367,7 +408,6 @@ li {
   color: #B92B27;
   border-bottom: 2px solid #B92B27;
 }
-
 
 .navSignIn:hover,
 .blogLink:hover {
@@ -377,4 +417,8 @@ li {
 
 .nav .tryQuora:hover {
   background-color: #F7F7F7;
+}
+
+.actionBtns button:hover {
+  background-color: #EFEFEF;
 }

@@ -5,18 +5,14 @@
 // import { useState, useContext } from "react"
 // import { GlobalContext } from "../context/context";
 
-import Navigation from "../components/Navigation";
 
-
-function SinglePost() {
+function AskQuestion() {
 
   return (
-    <div className="prop-cont">
-      <Navigation />
-      
+    <div className="">      
 
     </div>
   );
 }
 
-export default SinglePost;
+export default AskQuestion;
