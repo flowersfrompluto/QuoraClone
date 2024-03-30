@@ -1,0 +1,106 @@
+/* HOVER ANIMATIONS */
+
+.sideBarHead li:hover {
+    background-color: #E4E6E6;
+}
+
+.sidebarFoot .link:hover {
+    text-decoration: 1.5px underline;
+}
+
+.topBtn button:hover {
+    background-color: #F1F2F2;
+}
+
+.createBtns button:hover {
+    background-color: #f5f5f5;
+}
+
+.nav_menu input:focus {
+    border: 1px solid #2E69FF;
+    box-shadow: 0 0px 3px 0 #2E69FF;
+}
+
+.nav_menu input:hover {
+    border: 1px solid #2E69FF;
+}
+
+.nav_menu .addQuestion:hover {
+    background-color: #A82723;
+}
+
+.navSignIn:hover,
+.blogLink:hover {
+    background-color: transparent !important;
+    color: #00AEFF !important;
+}
+
+.nav .tryQuora:hover {
+    background-color: #F7F7F7;
+}
+
+.actionBtns button:hover {
+    background-color: #F0F0F0;
+}
+
+.addQuestBtn:hover,
+.acct button:hover {
+    background-color: #2d5bd0;
+}
+
+.left .exit button:hover{
+    background-color: #070752;
+}
+
+.closeBtn:hover {
+    background-color: #F0F0F0;
+}
+
+.question textarea:hover {
+    border: 1px solid #2E69FF;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.question textarea:focus {
+    border: 1px solid #2E69FF;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.popUp .close button:hover {
+    background-color: #F0F0F0;
+}
+
+.outlet {
+    background-color: #00AEFF;
+    height: 350px;
+}
+
+.formGroup input:focus {
+    border: 1px solid #2E69FF;
+    box-shadow: 0 0px 3px 0 #2E69FF;
+}
+
+.formGroup input:hover {
+    border: 1px solid #2E69FF;
+}
+
+.login .forgotPass:hover{
+    text-decoration: underline;
+}
+
+.lang:hover{
+    text-decoration: 1.5px solid underline;
+
+}
+
+.accountFoot .link:hover {
+    text-decoration: underline;
+}
+
+.resetPassword:hover{
+    text-decoration: underline;
+}

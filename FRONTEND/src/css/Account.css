@@ -1,0 +1,179 @@
+.account_page {
+    min-height: 100vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.account_items {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.account_items .logo {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.account_items .logo p {
+    margin-top: -55px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #646567;
+}
+
+.account_items .logo img {
+    height: 200px;
+}
+
+
+.account_grid {
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.account_grid .signUpComponent,
+.account_grid .loginComponent {
+    width: 90%;
+}
+
+
+.account_grid .border {
+    padding-top: 40px;
+}
+
+hr {
+    height: 510px;
+    border: none;
+    border-left: 1px solid #dee0e1;
+    color: #dee0e1;
+}
+
+.signUp .form .postBtn {
+    float: right;
+}
+
+/* FORM */
+
+
+.form {
+    min-width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.formGroup {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+}
+
+.topLabel{
+    padding-top: 10px;
+}
+
+.formGroup label {
+    color: #282829;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 15px 5px;
+    border: 1px solid #dee0e1;
+    outline: none;
+    transition: 700ms ease;
+    font-size: 16px;
+}
+
+.formGroup button {
+    padding: 12px 30px;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 2px;
+    border: none;
+    background-color: #e3e3e3;
+    cursor: pointer;
+}
+
+.form .info {
+    color: #282829;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee0e1;
+}
+
+.login .forgotPass {
+    text-decoration: none;
+    color: #646567;
+    font-weight: 600;
+    color: #939598;
+}
+
+.lang {
+    color: #2E69FF;
+    text-decoration: none;
+}
+
+.accounts_lang {
+    width: 100%;
+    border: 1px solid #dee0e1;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.terms {
+    font-size: 13px;
+    color: #282829;
+    padding: 5px 0;
+}
+
+.accountFoot {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f2f2;
+}
+
+.accountFoot ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+.accountFoot .link,
+.accountFoot li {
+    color: #939598;
+}
+
+.accountFoot .bullet {
+    color: #939598;
+    font-size: 10px;
+}
+
+.errorTxt{
+    color: #ff0000;
+    font-size: 10px;
+    padding-top: 2px;
+}
+
+.resetPassword{
+    text-decoration: none;
+    color: #2E69FF;
+}
+
