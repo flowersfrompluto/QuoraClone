@@ -6,14 +6,12 @@ import { IoCloseOutline } from "react-icons/io5";
 import logo from "../images/logo.png"
 
 // REACT ICONS
-import { FaUser, FaRegComment } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { CgGames } from "react-icons/cg";
 import { MdGames, MdOutlinePsychology, MdOutlineSportsKabaddi, MdCameraRoll, MdOutlineHistory, MdOutlineAdd } from "react-icons/md";
 import { GiMusicSpell } from "react-icons/gi";
 import { TiSocialAtCircular } from "react-icons/ti";
 import { PiNotePencilThin, PiArrowFatUpThin, PiArrowFatDownThin } from "react-icons/pi";
-import { LuPencil } from "react-icons/lu";
-import { RiQuestionnaireLine } from "react-icons/ri";
 import { IoMdClose, IoMdHome } from "react-icons/io";
 import { FaBell } from "react-icons/fa6";
 import { BsArrowRepeat } from "react-icons/bs";
@@ -24,18 +22,16 @@ import { CiGlobe } from "react-icons/ci";
 
 // IMPORTED IMAGES
 import img1 from "../images/img (3).jpg"
-import img2 from "../images/img (2).jpg"
-import img3 from "../images/img (1).jpg"
-import profile3 from "../images/icons/3.jpg"
-import profile4 from "../images/icons/4.jpg"
-import profile5 from "../images/icons/5.jpg"
-import profile6 from "../images/icons/6.jpg"
+import profile1 from "../images/icons/1.jpg"
+import profile2 from "../images/icons/2.jpg"
+import profile3 from "../images/icons/13.jpg"
 
 
-function Home() {
+
+function Post() {
 
   const [togglePost, settogglePost] = useState(false);
-  const [toggleHidePost, settoggleHidePost] = useState(true);
+  const [toggleReply, settoggleReply] = useState(false);
 
   return (
     <div>
@@ -175,6 +171,7 @@ function Home() {
                 </NavLink>
               </li>
             </ul>
+
             <ul className="sidebarFoot">
               <div className="flex">
                 <li>
@@ -217,211 +214,109 @@ function Home() {
               </li>
             </ul>
           </div>
+
           <div className="mainFeed">
-            <div className="newPost">
-              <div className="topBtn flex">
-                <Link to="/profile:id">
-                  <img src={profile6} alt="" />
-                </Link>
-                <button onClick={() => settogglePost(!togglePost)}>What do you want to ask or share?</button>
-              </div>
-              <div className="createBtns flex">
-                <button onClick={() => settogglePost(!togglePost)}>
-                  <span><RiQuestionnaireLine /></span> Ask
-                </button>
-                <div className="line">I</div>
-                <button>
-                  <span><PiNotePencilThin /></span> Answer
-                </button>
-                <div className="line">I</div>
-                <button onClick={() => settogglePost(!togglePost)}>
-                  <span><LuPencil /></span> Post
-                </button>
-              </div>
-            </div>
-
-            <div className="feed">
-              {toggleHidePost && (
-                <div className="postBody">
-                  <div className="userInfo flex">
-                    <div className="userName flex">
-                      <div>
-                        <Link to="/profile:id">
-                          <img src={profile3} alt="profile icon" />
-                        </Link>
+            <div className="feed commentFeed">
+              <div className="postBody">
+                <div className="userInfo flex">
+                  <div className="userName flex">
+                    <div>
+                      <Link to="/profile:id">
+                        <img src={profile1} alt="Profile icon" />
+                      </Link>
+                    </div>
+                    <div className="userDetails">
+                      <div className="flex">
+                        <p>True Love Conquers All</p>
+                        <p className="bullet">•</p>
+                        <button className="followBtn">Follow</button>
                       </div>
-                      <div className="userDetails">
-                        <div className="flex">
-                          <p>True Love Conquers All</p>
-                          <p className="bullet">•</p>
-                          <button className="followBtn">Follow</button>
-                        </div>
-                        <div className="postedBy flex">
-                          <p>Posted by <Link className="userLink">Ana Lorde</Link></p>
-                          <span className="bullet">•</span>
-                          <p>Oct 20</p>
-                        </div>
+                      <div className="postedBy flex">
+                        <p>Posted by <Link className="userLink">Ana Lorde</Link></p>
+                        <span className="bullet">•</span>
+                        <p>Oct 20</p>
                       </div>
                     </div>
+                  </div>
+                  <div>
+                    <button className="hideBtn">
+                      <IoMdClose />
+                    </button>
+                  </div>
+                </div>
+                <div className="post">
+                  <div className="postTxt">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea illo repellendus similique impedit officiis, rerum porro quidem laboriosam, optio dicta aliquid vitae tenetur, ullam veniam ipsam voluptatum adipisci quasi? Ab, libero! Facilis eius rem odio quidem commodi. Distinctio quae maiores eum unde rem, rerum corporis, recusandae voluptate harum nostrum voluptatem!</p>
+                  </div>
+                  <div className="postImage">
+                    <img src={img1} alt="" />
+                  </div>
+                </div>
+                <div className="actionBtns flex">
+                  <div className="flex">
+                    <button className="upVoteBtn flex">
+                      <p className="arrowUp"><PiArrowFatUpThin /></p>
+                      Upvote
+                      <p className="bullet">•</p>
+                      <p>100</p>
+                    </button>
+                    <button className="downVoteBtn">
+                      <PiArrowFatDownThin />
+                    </button>
+                  </div>
+                  <div className="atnBtn">
                     <div>
-                      <button className="hideBtn" onClick={() => settoggleHidePost(!toggleHidePost)}>
-                        <IoMdClose />
+                      <button className="flex">
+                        <BsArrowRepeat />
+                        <p className="bullet">•</p>
+                        <p>100</p>
                       </button>
                     </div>
                   </div>
-                  <Link to="/post/:id">
-                    <div className="post">
-                      <div className="postTxt">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea illo repellendus similique impedit officiis, rerum porro quidem laboriosam, optio dicta aliquid vitae tenetur, ullam veniam ipsam voluptatum adipisci quasi? Ab, libero! Facilis eius rem odio quidem commodi. Distinctio quae maiores eum unde rem, rerum corporis, recusandae voluptate harum nostrum voluptatem!</p>
-
-                      </div>
-                      <div className="postImage">
-                        <img src={img1} alt="" />
-                      </div>
-                    </div>
+                </div>
+              </div>
+              <div className="makeComment flex">
+                <div className="commentIcon">
+                  <Link to="/profile:id">
+                    <img src={profile2} alt="Profile Icon" />
                   </Link>
-                  <div className="actionBtns flex">
-                    <div className="flex">
-                      <button className="upVoteBtn flex">
-                        <p className="arrowUp"><PiArrowFatUpThin /></p>
-                        Upvote
-                        <p className="bullet">•</p>
-                        <p>100</p>
-                      </button>
-                      <button className="downVoteBtn">
-                        <PiArrowFatDownThin />
-                      </button>
-                    </div>
-                    <div className="atnBtn flex">
-                      <div>
-                        <button className="flex">
-                          <FaRegComment />
-                          <p className="bullet">•</p>
-                          <p>100</p>
-                        </button>
-                      </div>
-                      <div>
-                        <button className="flex">
-                          <BsArrowRepeat />
-                          <p className="bullet">•</p>
-                          <p>100</p>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              )}
-              <div className="postBody">
-                <div className="userInfo flex">
-                  <div className="userName flex">
-                    <div>
-                      <Link to="/profile:id">
-                        <img src={profile4} alt="profile icon" />
-                      </Link>
-                    </div>
-                    <div className="userDetails">
-                      <div className="flex">
-                        <p>True Love Conquers All</p>
-                        <p className="bullet">•</p>
-                        <button className="followBtn">Follow</button>
-                      </div>
-                      <div className="postedBy flex">
-                        <p>Posted by <Link className="userLink">Ana Lorde</Link></p>
-                        <span className="bullet">•</span>
-                        <p>Oct 20</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <button className="hideBtn" onClick={() => settoggleHidePost(!toggleHidePost)}>
-                      <IoMdClose />
-                    </button>
-                  </div>
+                <div className="commentInput">
+                  {/* RESIZEABLE INPUT */}
+                  <p className="resize">
+                    <span class="textarea" role="textbox" contentEditable></span>
+                  </p>
                 </div>
-                <Link to="/post/:id">
-                  <div className="post">
-                    <div className="postTxt">
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea illo repellendus similique impedit officiis, rerum porro quidem laboriosam, optio dicta aliquid vitae tenetur, ullam veniam ipsam voluptatum adipisci quasi? Ab, libero! Facilis eius rem odio quidem commodi. Distinctio quae maiores eum unde rem, rerum corporis, recusandae voluptate harum nostrum voluptatem!</p>
-                    </div>
-                    <div className="postImage">
-                      <img src={img2} alt="" />
-                    </div>
-                  </div>
-                </Link>
-                <div className="actionBtns flex">
-                  <div className="flex">
-                    <button className="upVoteBtn flex">
-                      <p className="arrowUp"><PiArrowFatUpThin /></p>
-                      Upvote
-                      <p className="bullet">•</p>
-                      <p>100</p>
-                    </button>
-                    <button className="downVoteBtn">
-                      <PiArrowFatDownThin />
-                    </button>
-                  </div>
-                  <div className="atnBtn flex">
-                    <div>
-                      <Link to="/post/:id">
-                        <button className="flex">
-                          <FaRegComment />
-                          <p className="bullet">•</p>
-                          <p>100</p>
-                        </button>
-                      </Link>
-                    </div>
-                    <div>
-                      <button className="flex">
-                        <BsArrowRepeat />
-                        <p className="bullet">•</p>
-                        <p>100</p>
-                      </button>
-                    </div>
-                  </div>
+                <div className="commentBtn">
+                  <button>Add Comment</button>
                 </div>
               </div>
               <div className="postBody">
-                <div className="userInfo flex">
+                <div className="userInfo">
                   <div className="userName flex">
                     <div>
                       <Link to="/profile:id">
-                        <img src={profile5} alt="profile icon" />
+                        <img src={profile3} alt="" />
                       </Link>
                     </div>
                     <div className="userDetails">
-                      <div className="flex">
-                        <p>True Love Conquers All</p>
-                        <p className="bullet">•</p>
-                        <button className="followBtn">Follow</button>
-                      </div>
                       <div className="postedBy flex">
-                        <p>Posted by <Link className="userLink">Ana Lorde</Link></p>
+                        <p>Posted by <Link className="userLink">Gerard Molliere</Link></p>
                         <span className="bullet">•</span>
                         <p>Oct 20</p>
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <button className="hideBtn" onClick={() => settoggleHidePost(!toggleHidePost)}>
-                      <IoMdClose />
-                    </button>
+                </div>
+                <div className="post">
+                  <div className="postTxt">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quisquam voluptates dignissimos qui provident ad voluptate quasi maxime! Dignissimos consequatur doloribus consectetur laborum, eum, dolorum exercitationem temporibus cum soluta quidem amet doloremque facere fugiat possimus tenetur inventore? Distinctio quisquam laborum neque aliquam culpa voluptatibus ipsa voluptatem. Quaerat fuga natus voluptatum laudantium quo quos assumenda ipsa culpa? Eum quia numquam quaerat cupiditate. Corrupti molestiae neque labore autem ea mollitia cupiditate unde!</p>
                   </div>
                 </div>
-                <Link to="/post/:id">
-                  <div className="post">
-                    <div className="postTxt">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quisquam voluptates dignissimos qui provident ad voluptate quasi maxime! Dignissimos consequatur doloribus consectetur laborum, eum, dolorum exercitationem temporibus cum soluta quidem amet doloremque facere fugiat possimus tenetur inventore? Distinctio quisquam laborum neque aliquam culpa voluptatibus ipsa voluptatem. Quaerat fuga natus voluptatum laudantium quo quos assumenda ipsa culpa? Eum quia numquam quaerat cupiditate. Corrupti molestiae neque labore autem ea mollitia cupiditate unde!</p>
-                    </div>
-                    <div className="postImage">
-                      <img src={img3} alt="" />
-                    </div>
-                  </div>
-                </Link>
-                <div className="actionBtns flex">
+                <div className="singlePost flex">
                   <div className="flex">
                     <button className="upVoteBtn flex">
                       <p className="arrowUp"><PiArrowFatUpThin /></p>
-                      Upvote
                       <p className="bullet">•</p>
                       <p>100</p>
                     </button>
@@ -429,27 +324,28 @@ function Home() {
                       <PiArrowFatDownThin />
                     </button>
                   </div>
-                  <div className="atnBtn flex">
-                    <div>
-                      <button className="flex">
-                        <FaRegComment />
-                        <p className="bullet">•</p>
-                        <p>100</p>
-                      </button>
-                    </div>
-                    <div>
-                      <button className="flex">
-                        <BsArrowRepeat />
-                        <p className="bullet">•</p>
-                        <p>100</p>
-                      </button>
-                    </div>
+                  <div className="replyBtn">
+                    <button onClick={() => settoggleReply(!toggleReply)}>
+                      Reply
+                    </button>
                   </div>
                 </div>
+                {toggleReply && (<div className="replyComment flex">
+                    <div className="replyInput">
+                      {/* RESIZEABLE INPUT */}
+                      <p className="resize">
+                        <span class="textarea" role="textbox" contentEditable></span>
+                      </p>
+                    </div>
+                    <div className="replyBtn">
+                      <button>Reply</button>
+                    </div>
+                  </div>)}
               </div>
             </div>
-
           </div>
+
+
           <div className="ads">empty</div>
         </div>
       </div>
@@ -457,4 +353,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Post;

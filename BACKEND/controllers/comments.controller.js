@@ -1,17 +1,17 @@
-const MusicModel = require("../models/music.model");
+const CommentsModel = require("../models/comments.model");
 
-const createMusic = async (req, res) => {
+const createComments = async (req, res) => {
   try {
     const { title } = req.body;
-    const newMusic = new MusicModel(req.body);
+    const newComments = new CommentsModel(req.body);
     if (req.file) {
-      newMusic.track = req.file.path;
+      newComments.track = req.file.path;
     }
     if (!title) {
       const [getTitle] = req.file.originalname.split(".mp3");
-      newMusic.title = getTitle;
+      newComments.title = getTitle;
     }
-    const resp = await newMusic.save();
+    const resp = await newComments.save();
     res.json({
       code: 200,
       message: "Song Uploaded successfully",
@@ -25,10 +25,10 @@ const createMusic = async (req, res) => {
   }
 };
 
-const getMusic = async (req, res) => {
+const getComments = async (req, res) => {
   try {
     if (req.query.user_id) {
-      const resp = await MusicModel.find({ user_id: req.query.user_id });
+      const resp = await CommentsModel.find({ user_id: req.query.user_id });
       res.json({
         code: 200,
         message: "All Libraries",
@@ -48,14 +48,14 @@ const getMusic = async (req, res) => {
   }
 };
 
-const deleteMusic = async (req, res) => {
+const deleteComments = async (req, res) => {
   try {
     const id = req.params.id;
-    const resp = await MusicModel.findByIdAndDelete(id);
+    const resp = await CommentsModel.findByIdAndDelete(id);
     res.json({
       statusCode: 200,
       statusText: "OK",
-      message: "Music Deleted Successfully",
+      message: "Comments Deleted Successfully",
       data: resp,
     });
   } catch (err) {
@@ -68,4 +68,4 @@ const deleteMusic = async (req, res) => {
   }
 };
 
-module.exports = { createMusic, getMusic, deleteMusic };
+module.exports = { createComments, getComments, deleteComments };

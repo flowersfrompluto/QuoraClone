@@ -1,29 +1,29 @@
-const PlaylistModel = require("../models/playlist.model");
+const PostModel = require("../models/posts.model");
 
-const createPlaylist = async (req, res) => {
+const createPost = async (req, res) => {
   try {
-    const save_playlist = new PlaylistModel(req.body);
-    const resp = await save_playlist.save();
+    const save_Post = new PostModel(req.body);
+    const resp = await save_Post.save();
     res.json({
       code: 200,
-      message: "Playlist successfully created",
+      message: "Post successfully created",
       data: resp,
     });
   } catch (err) {
     res.json({
       code: 404,
-      message: "Could Not Create Playlist",
+      message: "Could Not Create Post",
     });
   }
 };
 
-const getPlaylist = async (req, res) => {
+const getPost = async (req, res) => {
   try {
     if (req.query.user_id) {
-      const resp = await PlaylistModel.find({ user_id: req.query.user_id });
+      const resp = await PostModel.find({ user_id: req.query.user_id });
       res.json({
         code: 200,
-        message: "All Playlists",
+        message: "All Posts",
         data: resp,
         length: resp.length,
       });
@@ -36,19 +36,19 @@ const getPlaylist = async (req, res) => {
   } catch (err) {
     res.json({
       code: 404,
-      message: "Could Not Get Playlists",
+      message: "Could Not Get Posts",
     });
   }
 };
 
-const deletePlaylist = async (req, res) => {
+const deletePost = async (req, res) => {
   try {
     const id = req.params.id;
-    const resp = await PlaylistModel.findByIdAndDelete(id);
+    const resp = await PostModel.findByIdAndDelete(id);
     res.json({
       statusCode: 200,
       statusText: "OK",
-      message: "Playlist Deleted Successfully",
+      message: "Post Deleted Successfully",
       data: resp,
     });
   } catch (err) {
@@ -61,4 +61,4 @@ const deletePlaylist = async (req, res) => {
   }
 };
 
-module.exports = { createPlaylist, getPlaylist, deletePlaylist };
+module.exports = { createPost, getPost, deletePost };

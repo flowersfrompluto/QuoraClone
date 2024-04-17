@@ -39,7 +39,8 @@
     background-color: #F7F7F7;
 }
 
-.actionBtns button:hover {
+.actionBtns button:hover,
+.singlePost button:hover {
     background-color: #F0F0F0;
 }
 
@@ -48,7 +49,7 @@
     background-color: #2d5bd0;
 }
 
-.left .exit button:hover{
+.left .exit button:hover {
     background-color: #070752;
 }
 
@@ -88,11 +89,11 @@
     border: 1px solid #2E69FF;
 }
 
-.login .forgotPass:hover{
+.login .forgotPass:hover {
     text-decoration: underline;
 }
 
-.lang:hover{
+.lang:hover {
     text-decoration: 1.5px solid underline;
 
 }
@@ -101,6 +102,14 @@
     text-decoration: underline;
 }
 
-.resetPassword:hover{
+.resetPassword:hover {
     text-decoration: underline;
+}
+
+.hideBtn:hover {
+    color: #6b0200;
+}
+
+.followBtn:hover {
+    color: #0048ff;
 }

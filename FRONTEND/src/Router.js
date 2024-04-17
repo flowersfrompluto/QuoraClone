@@ -12,6 +12,7 @@ import AllPosts from "./pages/admin/AllPosts"
 import CreateAdmin from "./pages/admin/CreateAdmin"
 import CreateUser from "./pages/admin/CreateUser"
 import Users from "./pages/admin/Users"
+import Post from "./pages/Post";
 import Dashboard from "./pages/admin/Dashboard";
 
 
@@ -21,8 +22,9 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/post/:id" element={<Post />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile:id" element={<Profile />} />
         <Route path="/" element={<PopUp />}>
           <Route path="/popup" element={<Navigate replace to="/popup/createpost" />} />
           <Route path="/createpost" element={<CreatePost />} />
@@ -34,6 +36,7 @@ export default function Router() {
         <Route path="/adminsignup" element={<CreateAdmin />} />
         <Route path="/usersignup" element={<CreateUser />} />
         <Route path="/users" element={<Users />} />
+        
 
         {/* <Route path="/admin" element={<Admin />}>
           <Route path="admin" element={<Navigate replace to="dashboard" />} />

@@ -21,7 +21,7 @@ nav {
     height: 90px;
 }
 
-.right .signUp form{
+.right .signUp form {
     width: 60%;
     margin: auto;
     padding: 15px;
@@ -51,7 +51,10 @@ nav {
     height: 100%;
     position: fixed;
     z-index: 80;
-    background-color: #b55f4a;
+    /* background-color: #b55f4a; */
+    background-color: #B92B27;
+    background-color: #1f1fac;
+    background-color: #1d1d1d;
     margin-top: 93px;
 }
 
@@ -81,7 +84,7 @@ nav {
     color: #070752;
 }
 
-.left a:hover .span{
+.left a:hover .span {
     cursor: pointer;
     transition: 800ms;
     transform: translateX(20px);
@@ -265,7 +268,7 @@ td .delete a {
 }
 
 .left a.active {
-color: #070752;
+    color: #070752;
 }
 
 .left a.inactive {
@@ -278,14 +281,14 @@ color: #070752;
     border-bottom: none;
 }
 
-.left a.active:hover .span{
+.left a.active:hover .span {
     cursor: pointer;
     transform: translateX(0);
     color: #070752;
 }
 
 .left .exit button,
-.acct button{
+.acct button {
     background-color: #2E69FF;
     border: none;
     color: #FFFFFF;
@@ -296,7 +299,7 @@ color: #070752;
     border-radius: 2px;
 }
 
-tbody button{
+tbody button {
     background-color: transparent;
     border: none;
     color: #9f2723;
@@ -307,6 +310,6 @@ tbody button{
     border-radius: 2px;
 }
 
-tbody button:hover{
+tbody button:hover {
     color: #d9201a;
 }

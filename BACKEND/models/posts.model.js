@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const PlaylistSchema = new Schema(
+const PostSchema = new Schema(
   {
     user_id: {
       type: String,
@@ -15,5 +15,5 @@ const PlaylistSchema = new Schema(
   { timestamps: true }
 );
 
-const PlaylistModel = mongoose.model("playlists", PlaylistSchema);
-module.exports = PlaylistModel;
+const PostModel = mongoose.model("posts", PostSchema);
+module.exports = PostModel;

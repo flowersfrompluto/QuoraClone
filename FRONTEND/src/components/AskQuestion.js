@@ -14,7 +14,6 @@ function AskQuestion() {
   return (
     <div>
       <div className="question">
-        <h1>ASK QUESTION</h1>
         <div className="tipped">
           <div className="tips">
             <b>Tips on getting good answers quickly</b>

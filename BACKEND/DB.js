@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const DB_connection = () => {
   mongoose
-    .connect(process.env.DB_URI)
+    .connect("mongodb+srv://HarryAuth:69DuK0h3Qlp3NEPH@cluster.st5u2bd.mongodb.net/")
     .then(() => console.log("Database Connection Successful"))
     .catch((err) => console.log(err));
 };

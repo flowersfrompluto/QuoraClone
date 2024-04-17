@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const MusicSchema = new Schema({
+const CommentsSchema = new Schema({
   user_id: {
     type: String,
     required: true,
@@ -19,5 +19,5 @@ const MusicSchema = new Schema({
   },
 });
 
-const MusicModel = mongoose.model("music", MusicSchema);
-module.exports = MusicModel;
+const CommentsModel = mongoose.model("comments", CommentsSchema);
+module.exports = CommentsModel;
