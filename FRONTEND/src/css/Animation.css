@@ -106,7 +106,8 @@
     text-decoration: underline;
 }
 
-.hideBtn:hover {
+.hideBtn:hover,
+.commentAtns .deleteCommentBtn button:hover {
     color: #6b0200;
 }
 

@@ -1,61 +1,83 @@
 const CommentsModel = require("../models/comments.model");
 
-const createComments = async (req, res) => {
+// const getComments = async (req, res) => {
+//   try {
+//     if (req.query.user_id) {
+//       const resp = await CommentsModel.find({ user_id: req.query.user_id });
+//       res.json({
+//         code: 200,
+//         message: "All Libraries",
+//         data: resp,
+//       });
+//     } else {
+//       res.json({
+//         code: 404,
+//         message: "'user_id' required in the request query Parameter",
+//       });
+//     }
+//   } catch (err) {
+//     res.json({
+//       code: 404,
+//       message: "Could Not Get Libraries",
+//     });
+//   }
+// };
+
+
+// Get All Comment
+const getAllComments = async (req, res) => {
   try {
-    const { title } = req.body;
-    const newComments = new CommentsModel(req.body);
-    if (req.file) {
-      newComments.track = req.file.path;
-    }
-    if (!title) {
-      const [getTitle] = req.file.originalname.split(".mp3");
-      newComments.title = getTitle;
-    }
-    const resp = await newComments.save();
+    const resp = await CommentsModel.find();
     res.json({
       code: 200,
-      message: "Song Uploaded successfully",
+      statusText: "OK",
+      message: "All Comment",
       data: resp,
     });
   } catch (err) {
+    console.log(err);
     res.json({
       code: 404,
+      statusText: "",
       message: err.message,
     });
   }
 };
 
-const getComments = async (req, res) => {
+// Create a Comment
+const createComment = async (req, res) => {
   try {
-    if (req.query.user_id) {
-      const resp = await CommentsModel.find({ user_id: req.query.user_id });
-      res.json({
-        code: 200,
-        message: "All Libraries",
-        data: resp,
-      });
-    } else {
-      res.json({
-        code: 404,
-        message: "'user_id' required in the request query Parameter",
-      });
-    }
+    const { comment } = req.body;
+    const createComment = new CommentsModel({
+      user_id,
+      comment,
+    });
+    const resp = await createComment.save();
+    res.status(200).json({
+      code: 200,
+      statusText: "OK",
+      message: "Comment Created Successfully",
+      data: resp,
+    });
   } catch (err) {
+    console.log(err);
     res.json({
       code: 404,
-      message: "Could Not Get Libraries",
+      statusText: "",
+      message: err.message,
     });
   }
 };
 
-const deleteComments = async (req, res) => {
+// Deleting a Comment
+const deleteComment = async (req, res) => {
   try {
     const id = req.params.id;
     const resp = await CommentsModel.findByIdAndDelete(id);
     res.json({
       statusCode: 200,
       statusText: "OK",
-      message: "Comments Deleted Successfully",
+      message: "Comment Deleted Successfully",
       data: resp,
     });
   } catch (err) {
@@ -68,4 +90,4 @@ const deleteComments = async (req, res) => {
   }
 };
 
-module.exports = { createComments, getComments, deleteComments };
+module.exports = { createComment, getAllComments, deleteComment };

@@ -24,7 +24,7 @@ const getAllAdmin = async (req, res) => {
 // Create a Admin
 const createAdmin = async (req, res) => {
   try {
-    const { first_name, last_name, dob, gender, address, email, phone, password } = req.body;
+    const { first_name, last_name, email, phone, password } = req.body;
     const checkIfAdminEmailExist = await adminModel.findOne({ email });
     if (checkIfAdminEmailExist) {
       res.json({
@@ -37,11 +37,8 @@ const createAdmin = async (req, res) => {
     const createAdmin = new adminModel({
       first_name,
       last_name,
-      dob,
-      gender,
-      address,
-      phone,
       email,
+      phone,
       password: encryptPassword,
     });
     const resp = await createAdmin.save();

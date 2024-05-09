@@ -24,7 +24,7 @@ const getAllUsers = async (req, res) => {
 // Create a User
 const createUser = async (req, res) => {
   try {
-    const { first_name, last_name, dob, gender, address, email, phone, password } = req.body;
+    const { first_name, last_name, email, phone, password } = req.body;
     const checkIfUserEmailExist = await userModel.findOne({ email });
     if (checkIfUserEmailExist) {
       res.json({
@@ -37,9 +37,6 @@ const createUser = async (req, res) => {
     const createUser = new userModel({
       first_name,
       last_name,
-      dob,
-      gender,
-      address,
       phone,
       email,
       password: encryptPassword,

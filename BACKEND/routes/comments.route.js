@@ -1,10 +1,10 @@
 const express = require("express");
-const { createComments, getComments, deleteComments } = require("../controllers/comments.controller");
+const { createComment, getAllComments, deleteComment } = require("../controllers/comments.controller");
 const FileUpload = require("../middlewares/FileUpload");
 const router = express.Router();
 
-router.post("/", FileUpload.single("track"), createComments);
-router.get("/", getComments);
-router.delete("/:id", deleteComments);
+router.post("/", FileUpload.single("track"), createComment);
+router.get("/", getAllComments);
+router.delete("/:id", deleteComment);
 
 module.exports = router;

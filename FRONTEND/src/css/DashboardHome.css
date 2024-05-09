@@ -81,14 +81,14 @@ nav {
 .user:hover a,
 .exit:hover a {
     cursor: pointer;
-    color: #070752;
+    color: #2E69FF;
 }
 
 .left a:hover .span {
     cursor: pointer;
     transition: 800ms;
     transform: translateX(20px);
-    color: #070752;
+    color: #2E69FF;
 }
 
 .span {
@@ -268,7 +268,7 @@ td .delete a {
 }
 
 .left a.active {
-    color: #070752;
+    color: #2E69FF;
 }
 
 .left a.inactive {
@@ -284,7 +284,7 @@ td .delete a {
 .left a.active:hover .span {
     cursor: pointer;
     transform: translateX(0);
-    color: #070752;
+    color: #2E69FF;
 }
 
 .left .exit button,

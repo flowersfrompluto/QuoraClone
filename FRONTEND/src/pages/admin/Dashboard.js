@@ -60,16 +60,14 @@ function Dashboard() {
                                 <tr>
                                     <th>S/N</th>
                                     <th>NAME</th>
-                                    <th>CATEGORY</th>
-                                    <th>PRICE</th>
-                                    <th>QUANTITY</th>
-                                    <th>DESCRIPTION</th>
-                                    <th>ACTIONS</th>
+                                    <th>TOTAL POST</th>
+                                    <th>TOTAL LIKES</th>
+                                    <th>TOTAL DISLIKES</th>
+                                    <th>ABOUT</th>
                                 </tr>
                             </thead>
                             <tbody className="tBody">
                                 <tr>
-                                    <th></th>
                                     <th></th>
                                     <th></th>
                                     <th></th>

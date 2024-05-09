@@ -26,9 +26,9 @@ function SideBar() {
                     <NavLink to="/allposts" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
                         All Posts<span className="span"><RxDoubleArrowRight /></span></NavLink>
                 </div>
-                <div className="exit">
+                {/* <div className="exit">
                     <button>Logout</button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

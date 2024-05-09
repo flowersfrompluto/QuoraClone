@@ -1,10 +1,8 @@
-// import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 
 function SignUp() {
 
-  // const navigate = useNavigate();
   const [uFname, setuFname] = useState("");
   const [uLname, setuLname] = useState("");
   const [uEmail, setuEmail] = useState("");
@@ -17,33 +15,37 @@ function SignUp() {
     if (uFname === "" || uLname === "" || uEmail === "" || uPhone === "" || uPassword === "") {
       setCheckValue(true);
     }
-    // try {
-    //   e.preventDefault();
-    //   if (uFname === "" || uLname === "" || uEmail === "" || uPhone === "" || uPassword === "") {
-    //     setCheckValue(true);
-    //   } else {
-    //     let user_obj = {
-    //       first_name: uFname,
-    //       last_name: uLname,
-    //       email: uEmail,
-    //       phone: uPhone,
-    //       password: uPassword,
-    //     };
-    //     const res = await fetch("http://property.reworkstaging.name.ng/v1/users", {
-    //       method: "Post",
-    //       headers: {
-    //         "content-type": "application/JSON"
-    //       },
-    //       body: JSON.stringify(user_obj)
-    //     });
-    //     const users = await res.json();
-    //     console.log(users)
-    //     alert("Account Created Successful")
-    //     navigate("/login")
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      e.preventDefault();
+      if (uFname === "" || uLname === "" || uEmail === "" || uPhone === "" || uPassword === "") {
+        setCheckValue(true);
+      } else {
+        let user_obj = {
+          first_name: uFname,
+          last_name: uLname,
+          email: uEmail,
+          phone: uPhone,
+          password: uPassword,
+        };
+        const res = await fetch("http://localhost:4000/api/v1/users", {
+          method: "Post",
+          headers: {
+            "content-type": "application/JSON"
+          },
+          body: JSON.stringify(user_obj)
+        });
+        const users = await res.json();
+        console.log(users)
+        alert("Account Created Successful, Kindly login")
+        setuFname("");
+        setuLname("");
+        setuEmail("");
+        setUphone("");
+        setuPassword("");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -53,12 +55,12 @@ function SignUp() {
           <p className="info">Sign Up</p>
           <div className="formGroup topLabel">
             <label htmlFor="">First Name</label>
-            <input maxlength="25" type="text" placeholder="First Name" value={uFname} onChange={(e) => setuFname(e.target.value)} />
+            <input maxLength="25" type="text" placeholder="First Name" value={uFname} onChange={(e) => setuFname(e.target.value)} />
             {checkValue === true && uFname === "" ? <p className="errorTxt">First Name Required</p> : null}
           </div>
           <div className="formGroup">
             <label htmlFor="">Last Name</label>
-            <input maxlength="25" type="text" placeholder="Last Name" value={uLname} onChange={(e) => setuLname(e.target.value)} />
+            <input maxLength="25" type="text" placeholder="Last Name" value={uLname} onChange={(e) => setuLname(e.target.value)} />
             {checkValue === true && uLname === "" ? <p className="errorTxt">Last Name Required</p> : null}
           </div>
           <div className="formGroup">

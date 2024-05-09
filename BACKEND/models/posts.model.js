@@ -7,10 +7,19 @@ const PostSchema = new Schema(
       type: String,
       required: true,
     },
-    name: {
+    comment: {
       type: String,
-      required: true,
     },
+    likes: {
+      type: Number,
+    },
+    dislikes: {
+      type: Number,
+    },
+    file: {
+      type: String,
+    },
+
   },
   { timestamps: true }
 );

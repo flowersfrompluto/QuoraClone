@@ -1,6 +1,7 @@
 // import { NavLink } from "react-router-dom";
 // import Button from "../components/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 
 // REACT ICONS
@@ -8,48 +9,43 @@ import { FaUser } from "react-icons/fa";
 import { RxTriangleRight } from "react-icons/rx";
 
 function CreatePost() {
-
+  const navigate = useNavigate()
   const [message, setMessage] = useState("");
   const [checkValue, setCheckValue] = useState(false);
-
+  const loggedinuser = JSON.parse(localStorage.getItem("loggedinuser"));
   const makePost = async (e) => {
     e.preventDefault();
-    if (message === "") {
-      setCheckValue(true);
+
+
+    try {
+      if (loggedinuser === null) {
+        alert("Please Login or Sign Up to create a post");
+        navigate("/account")
+      }
+      else {
+        if (message === "") {
+          setCheckValue(true);
+        } else {
+          let post_obj = {
+            message: message
+          };
+          const res = await fetch("http://localhost:4000/api/v1/posts", {
+            method: "Post",
+            headers: {
+              "content-type": "application/JSON"
+            },
+            body: JSON.stringify(post_obj)
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error)
     }
-    // try {
-    //   e.preventDefault();
-    //   if (uFname === "" || uLname === "" || uEmail === "" || uPhone === "" || uPassword === "") {
-    //     setCheckValue(true);
-    //   } else {
-    //     let user_obj = {
-    //       first_name: uFname,
-    //       last_name: uLname,
-    //       email: uEmail,
-    //       phone: uPhone,
-    //       password: uPassword,
-    //     };
-    //     const res = await fetch("http://property.reworkstaging.name.ng/v1/users", {
-    //       method: "Post",
-    //       headers: {
-    //         "content-type": "application/JSON"
-    //       },
-    //       body: JSON.stringify(user_obj)
-    //     });
-    //     const users = await res.json();
-    //     console.log(users)
-    //     alert("Account Created Successful")
-    //     navigate("/login")
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   return (
     <div>
       <div className="makePost">
-        <h1>CREATE POST</h1>
         <div className="flex">
           <p><FaUser /></p>
           <span>
@@ -77,5 +73,6 @@ function CreatePost() {
     </div >
   );
 }
+
 
 export default CreatePost;

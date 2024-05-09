@@ -3,7 +3,7 @@
 
 // import { IoCloseOutline } from "react-icons/io5";
 import CreatePost from "./CreatePost";
-import AskQuestion from "./AskQuestion";
+// import AskQuestion from "./AskQuestion";
 
 
 
@@ -15,7 +15,7 @@ function PopUp() {
                 <CreatePost />
             </div>
             <div className="absolute">
-                <AskQuestion />
+                {/* <AskQuestion /> */}
             </div>
         </div>
     )

@@ -3,6 +3,7 @@ import { useState } from "react";
 import PopUp from "../components/PopUp";
 
 import { IoCloseOutline } from "react-icons/io5";
+import { ImBin } from "react-icons/im";
 import logo from "../images/logo.png"
 
 // REACT ICONS
@@ -313,21 +314,27 @@ function Post() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quisquam voluptates dignissimos qui provident ad voluptate quasi maxime! Dignissimos consequatur doloribus consectetur laborum, eum, dolorum exercitationem temporibus cum soluta quidem amet doloremque facere fugiat possimus tenetur inventore? Distinctio quisquam laborum neque aliquam culpa voluptatibus ipsa voluptatem. Quaerat fuga natus voluptatum laudantium quo quos assumenda ipsa culpa? Eum quia numquam quaerat cupiditate. Corrupti molestiae neque labore autem ea mollitia cupiditate unde!</p>
                   </div>
                 </div>
-                <div className="singlePost flex">
-                  <div className="flex">
-                    <button className="upVoteBtn flex">
-                      <p className="arrowUp"><PiArrowFatUpThin /></p>
-                      <p className="bullet">•</p>
-                      <p>100</p>
-                    </button>
-                    <button className="downVoteBtn">
-                      <PiArrowFatDownThin />
-                    </button>
+                <div className="commentAtns flex">
+                  <div className="singlePost flex">
+                    <div className="flex">
+                      <button className="upVoteBtn flex">
+                        <p className="arrowUp"><PiArrowFatUpThin /></p>
+                        <p className="bullet">•</p>
+                        <p>100</p>
+                      </button>
+                      <button className="downVoteBtn">
+                        <PiArrowFatDownThin />
+                      </button>
+                    </div>
+                    <div className="replyBtn">
+                      <button onClick={() => settoggleReply(!toggleReply)}>
+                        Reply
+                      </button>
+                    </div>
                   </div>
-                  <div className="replyBtn">
-                    <button onClick={() => settoggleReply(!toggleReply)}>
-                      Reply
-                    </button>
+                  <div className="deleteCommentBtn">
+                    {/* <button>Delete</button> */}
+                    <button onClick=""><ImBin /></button>
                   </div>
                 </div>
                 {toggleReply && (<div className="replyComment flex">

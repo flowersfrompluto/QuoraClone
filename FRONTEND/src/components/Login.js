@@ -1,47 +1,49 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 
-// import { GlobalContext } from "../context/context";
-// import Button from "./Button";
+import { GlobalContext } from "../context/Context";
 
 function Login() {
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [uEmail, setuEmail] = useState("");
   const [uPassword, setuPassword] = useState("");
   const [checkValue, setCheckValue] = useState(false);
-  // const {currentUser} = useContext(GlobalContext)
+  const { currentUser } = useContext(GlobalContext)
 
   const loginForm = async (e) => {
     e.preventDefault();
     if (uEmail === "" || uPassword === "") {
       return setCheckValue(true);
     }
-    // try {
-    //   if (uEmail === "" || uPassword === "") {
-    //     return setCheckValue(true);
-    //   }
-    //   const login_obj = {
-    //     email: uEmail,
-    //     password: uPassword
-    //   }
-    //   const res = await fetch("http://property.reworkstaging.name.ng/v1/auth/login",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "content-type": "application/JSON"
-    //       },
-    //       body: JSON.stringify(login_obj)
-    //     })
-    //     const data = await res.json()
+    try {
+      if (uEmail === "" || uPassword === "") {
+        return setCheckValue(true);
+      }
+      const login_obj = {
+        email: uEmail,
+        password: uPassword
+      }
+      const res = await fetch("http://localhost:4000/api/v1/users/login",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/JSON"
+          },
+          body: JSON.stringify(login_obj)
+        })
+      const data = await res.json()
 
-    //     localStorage.setItem("loggedinuser", JSON.stringify(data))
-    //     console.log(data)
-    //     alert(currentUser.msg)
-    //     navigate("/")
-    // } catch (error) {
-    //   console.log(error)
-    // }
+      localStorage.setItem("loggedinuser", JSON.stringify(data))
+      console.log(data)
+      alert(res.ok)
+      // alert("Login Successful!")
+      setuEmail("");
+      setuPassword("");
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

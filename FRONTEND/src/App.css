@@ -742,6 +742,20 @@ nav a.inactive {
   color: gray;
 }
 
+.commentAtns{
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commentAtns .deleteCommentBtn{
+  padding-right: 25px;
+}
+
+.commentAtns .deleteCommentBtn button{
+  background-color: transparent;
+  border: none;
+  color: #505050;
+}
 
 /* PROFILE PAGE */
 
@@ -861,3 +875,4 @@ nav a.inactive {
   padding: 0px 8px;
   border: 1px solid #dee0e1;
 }
+

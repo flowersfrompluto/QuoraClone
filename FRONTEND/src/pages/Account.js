@@ -8,6 +8,7 @@ import SignUp from "../components/SignUp";
 
 
 function Account() {
+
   return (
     <div className="account_page">
       <div className="account_items">
