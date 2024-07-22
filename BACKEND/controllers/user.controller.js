@@ -58,7 +58,7 @@ const createUser = async (req, res) => {
   }
 };
 
-// Updating a user
+// Update a user
 const updateUser = async (req, res) => {
   try {
     const newUser = req.body;
@@ -80,7 +80,7 @@ const updateUser = async (req, res) => {
   }
 };
 
-// Deleting a user
+// Delete a user
 const deleteUser = async (req, res) => {
   try {
     const id = req.params.id;
@@ -101,6 +101,7 @@ const deleteUser = async (req, res) => {
   }
 };
 
+// User Login
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;

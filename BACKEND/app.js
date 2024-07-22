@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
-const PORT = 4000;
+// const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 const RouteLogger = require("./middlewares/RouteLogger");
 const DB_connection = require("./DB");
@@ -26,4 +27,11 @@ app.use("/api/v1/posts", postsRoutes);
 app.use("/api/v1/users", userRoutes);
 
 
-app.listen(process.env.PORT || PORT, () => console.log(`App Running on port: http://localhost:${PORT}`));
+// app.listen(process.env.PORT || PORT, () => console.log(`App Running on port: http://localhost:${PORT}`));
+
+
+//SERVER CONNECTION
+
+app.listen(PORT, () => {
+    console.log(`App Running on port: http://localhost:${PORT}`);
+})
